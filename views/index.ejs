@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <% messages.forEach(message => { %>
-    <div class="msg-container">
-      <div>
-        User:
-        <%= message.user %>
+    <%- include('navbar') %>
+    <main>
+      <h1><%= title %></h1>
+      <% messages.forEach(message => { %>
+      <div class="msg-container">
+        <div>
+          User:
+          <%= message.user %>
+        </div>
+        <div>
+          Message:
+          <%= message.text %>
+        </div>
+        <div>
+          Added:
+          <%= message.added %>
+        </div>
       </div>
-      <div>
-        Message:
-        <%= message.text %>
-      </div>
-      <div>
-        Added:
-        <%= message.added %>
-      </div>
-    </div>
-    <%});%>
+      <%});%>
+    </main>
   </body>
 </html>
