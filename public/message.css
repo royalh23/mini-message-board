@@ -7,3 +7,9 @@
 .msg-container > div {
   margin-bottom: 5px;
 }
+
+@media (prefers-color-scheme: dark) {
+  .msg-container {
+    border-color: white;
+  }
+}
