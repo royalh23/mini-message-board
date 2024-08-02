@@ -4,27 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %>></title>
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/base.css">
+    <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
     <%- include('navbar') %>
     <main>
       <h1><%= title %></h1>
-      <% messages.forEach(message => { %>
+      <% messages.forEach((message, idx) => { %>
       <div class="msg-container">
         <div>
-          User:
-          <%= message.user %>
+          <div>
+            User:
+            <%= message.user %>
+          </div>
+          <div>
+            Message:
+            <%= message.text %>
+          </div>
+          <div>
+            Added:
+            <%= message.added %>
+          </div>
         </div>
-        <div>
-          Message:
-          <%= message.text %>
-        </div>
-        <div>
-          Added:
-          <%= message.added %>
-        </div>
+        <a href="messages/<%= idx %>">Open</a>
       </div>
       <%});%>
     </main>

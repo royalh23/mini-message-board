@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %>></title>
+    <link rel="stylesheet" href="/base.css" />
+    <link rel="stylesheet" href="/message.css" />
+  </head>
+  <body>
+    <%- include('navbar') %>
+    <h1><%= title %></h1>
+    <div class="msg-container">
+      <div>User: <%= user %></div>
+      <div>Message: <%= text %></div>
+      <div>Added: <%= added %></div>
+    </div>
+  </body>
+</html>
