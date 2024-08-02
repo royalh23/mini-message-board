@@ -20,10 +20,3 @@
 .form-button:active {
   transform: translateY(4px);
 }
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color: white;
-    background-color: rgb(24, 24, 24);
-  }
-}

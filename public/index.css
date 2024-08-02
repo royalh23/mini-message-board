@@ -9,11 +9,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    color: white;
-    background-color: rgb(24, 24, 24);
-  }
-
   .msg-container {
     border-color: white;
   }
