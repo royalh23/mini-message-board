@@ -10,7 +10,7 @@ html {
 
 nav {
   background-color: rgb(0, 78, 203);
-  padding: 40px;
+  padding: 40px 0;
 }
 
 nav > ul {
