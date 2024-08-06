@@ -11,23 +11,23 @@
     <%- include('navbar') %>
     <main>
       <h1><%= title %></h1>
-      <% messages.forEach((message, idx) => { %>
+      <% messages.forEach((msg, idx) => { %>
       <div class="msg-container">
         <div>
           <div>
             User:
-            <%= message.user %>
+            <%= msg.username %>
           </div>
           <div>
             Message:
-            <%= message.text %>
+            <%= msg.message %>
           </div>
           <div>
             Added:
-            <%= message.added %>
+            <%= msg.created_date %>
           </div>
         </div>
-        <a href="messages/<%= idx %>">Open</a>
+        <a href="messages/<%= (idx+1) %>">Open</a>
       </div>
       <%});%>
     </main>

@@ -1,13 +1,23 @@
-const messages = require('../utils/messages');
+const db = require('../db/queries');
+const asyncHandler = require('express-async-handler');
 
-const getIndex = (req, res) => {
-  res.render('index', { title: 'Mini Message Board', messages: messages });
-};
+const getMessages = asyncHandler(async (req, res) => {
+  const messages = await db.getAllMessages();
+  res.render('index', {
+    title: 'Mini Message Board',
+    messages,
+  });
+});
 
-const getMessage = (req, res) => {
+const getMessage = asyncHandler(async (req, res) => {
   const { idx } = req.params;
-  const { user, text, added } = messages[idx];
-  res.render('message', { title: 'Message details', user, text, added });
-};
+  const [{ username, message, created_date }] = await db.getMessageById(idx);
+  res.render('message', {
+    title: 'Message details',
+    username,
+    message,
+    created_date,
+  });
+});
 
-module.exports = { getIndex, getMessage };
+module.exports = { getMessages, getMessage };
